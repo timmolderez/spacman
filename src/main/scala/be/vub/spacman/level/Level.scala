@@ -52,13 +52,6 @@ import scala.collection.mutable
   assert(board != null)
   assert(ghosts != null)
   assert(startSquares != null)
-  this.inProgress = false
-
-  import scala.collection.JavaConversions._
-
-  for (g <- ghosts) {
-    npcs.put(g, null)
-  }
 
   /** The lock that ensures moves are executed sequential. */
   final private val moveLock = new Object
@@ -74,6 +67,14 @@ import scala.collection.mutable
   final private var players = new util.ArrayList[Player]
   /** The objects observing this level. */
   final private var observers = new util.HashSet[Level.LevelObserver]
+
+   this.inProgress = false
+
+   import scala.collection.JavaConversions._
+
+   for (g <- ghosts) {
+     npcs.put(g, null)
+   }
 
   /**
     * Adds an observer that will be notified when the level is won or lost.

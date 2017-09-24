@@ -40,6 +40,11 @@ object ScorePanel {
 
 @SerialVersionUID(1L)
 class ScorePanel(val players: util.List[Player]) extends JPanel {
+  /** The map of players and the labels their scores are on. */
+  final private var scoreLabels = new util.LinkedHashMap[Player, JLabel]
+  /** The way to format the score information. */
+  private var scoreFormatter = ScorePanel.DEFAULT_SCORE_FORMATTER
+
   assert(players != null)
   setLayout(new GridLayout(2, players.size))
   var i = 1
@@ -60,14 +65,6 @@ class ScorePanel(val players: util.List[Player]) extends JPanel {
     scoreLabels.put(p, scoreLabel)
     add(scoreLabel)
   }
-  /**
-    * The map of players and the labels their scores are on.
-    */
-  final private var scoreLabels = new util.LinkedHashMap[Player, JLabel]
-  /**
-    * The way to format the score information.
-    */
-  private var scoreFormatter = ScorePanel.DEFAULT_SCORE_FORMATTER
 
   /**
     * Refreshes the scores of the players.

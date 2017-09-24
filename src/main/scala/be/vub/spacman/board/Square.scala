@@ -14,8 +14,6 @@ import com.google.common.collect.ImmutableList
   */
 abstract class Square protected() {
 
-  assert(invariant)
-
   /**
     * The units occupying this square, in order of appearance.
     */
@@ -25,6 +23,8 @@ abstract class Square protected() {
     * The collection of squares adjacent to this square.
     */
   final private var neighbours = new util.HashMap[Direction, Square]()
+
+  assert(invariant)
 
   /**
     * Returns the square adjacent to this square.
