@@ -1,7 +1,5 @@
 package be.vub.spacman.board
 
-import be.vub.spacman.board.nl.tudelft.jpacman.board.Square
-
 /**
   * A top-down view of a matrix of {@link Square}s.
   *

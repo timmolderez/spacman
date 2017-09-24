@@ -1,7 +1,5 @@
 package be.vub.spacman.board
 
-package nl.tudelft.jpacman.board
-
 import be.vub.spacman.sprite.Sprite
 import be.vub.spacman.board.Directions.Direction
 

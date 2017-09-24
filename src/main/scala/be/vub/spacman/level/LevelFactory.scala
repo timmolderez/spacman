@@ -1,18 +1,11 @@
 package be.vub.spacman.level
 
-package nl.tudelft.jpacman.level
-
 import java.util
 
-import be.vub.spacman.board.Board
-import be.vub.spacman.level.CollisionMap
-import be.vub.spacman.level.Pellet
-import be.vub.spacman.level.PlayerCollisions
+import be.vub.spacman.board.{Board, Square}
 import be.vub.spacman.board.Directions.Direction
-import be.vub.spacman.board.nl.tudelft.jpacman.board.Square
 import be.vub.spacman.npc.NPC
-import be.vub.spacman.npc.ghost.{GhostColor, GhostFactory}
-import be.vub.spacman.npc.ghost.nl.tudelft.jpacman.npc.ghost.Ghost
+import be.vub.spacman.npc.ghost.{Ghost, GhostColor, GhostFactory}
 import be.vub.spacman.sprite.{PacManSprites, Sprite}
 
 

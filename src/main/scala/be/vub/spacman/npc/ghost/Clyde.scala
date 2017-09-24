@@ -1,12 +1,8 @@
 package be.vub.spacman.npc.ghost
 
-package nl.tudelft.jpacman.npc.ghost
-
 import java.util
 
 import be.vub.spacman.board.Directions
-import be.vub.spacman.npc.ghost.nl.tudelft.jpacman.npc.ghost.Ghost
-import be.vub.spacman.npc.ghost.nl.tudelft.jpacman.npc.ghost.Navigation
 import be.vub.spacman.board.Directions.Direction
 import be.vub.spacman.level.Player
 import be.vub.spacman.sprite.Sprite
@@ -60,7 +56,7 @@ object Clyde {
     */
   private val OPPOSITES = new util.HashMap[Direction, Direction]
 
-  try OPPOSITES.put(Directions.NORTH, Directions.SOUTH)
+  OPPOSITES.put(Directions.NORTH, Directions.SOUTH)
   OPPOSITES.put(Directions.SOUTH, Directions.NORTH)
   OPPOSITES.put(Directions.WEST, Directions.EAST)
   OPPOSITES.put(Directions.EAST, Directions.WEST)

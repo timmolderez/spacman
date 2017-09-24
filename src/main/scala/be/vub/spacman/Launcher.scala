@@ -1,20 +1,15 @@
 package be.vub.spacman
 
-package nl.tudelft.jpacman
-
 import java.awt.event.KeyEvent
 import java.io.IOException
-import java.io.InputStream
-import java.util
 
-import be.vub.spacman.PacmanConfigurationException
-import be.vub.spacman.game.nl.tudelft.jpacman.game.{Game, GameFactory}
-import be.vub.spacman.level.PlayerFactory
-import be.vub.spacman.level.nl.tudelft.jpacman.level.{Level, LevelFactory, MapParser}
+import be.vub.spacman.board.{BoardFactory, Directions}
+import be.vub.spacman.level.{Level, LevelFactory, MapParser, PlayerFactory}
 import be.vub.spacman.sprite.PacManSprites
 import be.vub.spacman.board.Directions.Direction
-import be.vub.spacman.board.nl.tudelft.jpacman.board.BoardFactory
+import be.vub.spacman.game.{Game, GameFactory}
 import be.vub.spacman.npc.ghost.GhostFactory
+import be.vub.spacman.ui.{Action, PacmanUI, PacmanUiBuilder}
 
 
 /**
@@ -41,8 +36,8 @@ object Launcher {
 }
 
 class Launcher {
-  private var pacManUI = null
-  private var game = null
+  private var pacManUI = null : PacmanUI
+  private var game = null : Game
 
   /**
     * @return The game object this launcher will start when { @link #launch()}
@@ -128,19 +123,19 @@ class Launcher {
     val p1 = getSinglePlayer(game)
     builder.addKey(KeyEvent.VK_UP, new Action() {
       def doAction(): Unit = {
-        game.move(p1, Direction.NORTH)
+        game.move(p1, Directions.NORTH)
       }
-    }).addKey(KeyEvent.VK_DOWN, new Nothing() {
+    }).addKey(KeyEvent.VK_DOWN, new Action() {
       def doAction(): Unit = {
-        game.move(p1, Direction.SOUTH)
+        game.move(p1, Directions.SOUTH)
       }
-    }).addKey(KeyEvent.VK_LEFT, new Nothing() {
+    }).addKey(KeyEvent.VK_LEFT, new Action() {
       def doAction(): Unit = {
-        game.move(p1, Direction.WEST)
+        game.move(p1, Directions.WEST)
       }
-    }).addKey(KeyEvent.VK_RIGHT, new Nothing() {
+    }).addKey(KeyEvent.VK_RIGHT, new Action() {
       def doAction(): Unit = {
-        game.move(p1, Direction.EAST)
+        game.move(p1, Directions.EAST)
       }
     })
   }

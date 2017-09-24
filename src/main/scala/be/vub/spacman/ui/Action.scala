@@ -1,7 +1,5 @@
 package be.vub.spacman.ui
 
-package nl.tudelft.jpacman.ui
-
 /**
   * An action that can be executed.
   *

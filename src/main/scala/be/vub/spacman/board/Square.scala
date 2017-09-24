@@ -1,7 +1,5 @@
 package be.vub.spacman.board
 
-package nl.tudelft.jpacman.board
-
 import java.util
 
 import be.vub.spacman.board.Directions.Direction
@@ -58,7 +56,7 @@ abstract class Square protected() {
     * @return An immutable list of units occupying this square, in the order in
     *         which they occupied this square (i.e. oldest first.)
     */
-  def getOccupants: util.List[BoardUnit] = ImmutableList.copyOf(occupants)
+  def getOccupants: util.List[BoardUnit] = ImmutableList.copyOf(occupants.iterator())
 
   /**
     * Adds a new occupant to this square.

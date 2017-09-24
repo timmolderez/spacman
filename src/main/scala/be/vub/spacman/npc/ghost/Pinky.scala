@@ -1,7 +1,5 @@
 package be.vub.spacman.npc.ghost
 
-package nl.tudelft.jpacman.npc.ghost
-
 import be.vub.spacman.board.Directions.Direction
 import be.vub.spacman.level.Player
 import be.vub.spacman.sprite.Sprite

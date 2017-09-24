@@ -1,7 +1,7 @@
 package be.vub.spacman.level
 
-import be.vub.spacman.board.nl.tudelft.jpacman.board.BoardUnit
-import be.vub.spacman.npc.ghost.nl.tudelft.jpacman.npc.ghost.Ghost
+import be.vub.spacman.board.BoardUnit
+import be.vub.spacman.npc.ghost.Ghost
 
 
 /**
@@ -30,7 +30,7 @@ object DefaultPlayerInteractionMap {
         player.setAlive(false)
       }
     })
-    collisionMap.onCollision(classOf[Player], classOf[Pellet], new Nothing() {
+    collisionMap.onCollision(classOf[Player], classOf[Pellet], new CollisionInteractionMap.CollisionHandler[Player, Pellet] {
       def handleCollision(player: Player, pellet: Pellet): Unit = {
         pellet.leaveSquare()
         player.addPoints(pellet.getValue)

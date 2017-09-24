@@ -1,5 +1,4 @@
 package be.vub.spacman.ui
-package nl.tudelft.jpacman.ui
 
 import java.awt.BorderLayout
 import java.awt.Container
@@ -7,8 +6,8 @@ import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 import javax.swing.JFrame
 
-import be.vub.spacman.game.nl.tudelft.jpacman.game.Game
-import be.vub.spacman.ui.nl.tudelft.jpacman.ui.ScorePanel.ScoreFormatter
+import be.vub.spacman.game.Game
+import be.vub.spacman.ui.ScorePanel.ScoreFormatter
 
 
 /**
@@ -35,7 +34,7 @@ object PacmanUI {
 }
 
 @SerialVersionUID(1L)
-class PacmanUI(val game: Game, val buttons: Map[String, Action], val keyMappings: Map[Integer, Action], val sf: ScoreFormatter) extends JFrame("JPac-Man") {
+class PacmanUI(val game: Game, val buttons: Map[String, Action], val keyMappings: Map[Int, Action], val sf: ScoreFormatter) extends JFrame("JPac-Man") {
   assert(game != null)
   assert(buttons != null)
   assert(keyMappings != null)

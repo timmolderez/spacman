@@ -1,7 +1,5 @@
 package be.vub.spacman.level
 
-package nl.tudelft.jpacman.level
-
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStream
@@ -9,8 +7,7 @@ import java.io.InputStreamReader
 import java.util
 
 import be.vub.spacman.PacmanConfigurationException
-import be.vub.spacman.board.nl.tudelft.jpacman.board.{BoardFactory, Square}
-import be.vub.spacman.level.nl.tudelft.jpacman.level.LevelFactory
+import be.vub.spacman.board.{BoardFactory, Square}
 import be.vub.spacman.npc.NPC
 
 
@@ -175,7 +172,7 @@ class MapParser(/**
     * when the source could not be read.
     */
   @throws[IOException]
-  def parseMap(source: InputStream): Level = try {
+  def parseMap(source: InputStream): Level = {
     val reader = new BufferedReader(new InputStreamReader(source, "UTF-8"))
     try {
       val lines = new util.ArrayList[String]

@@ -1,18 +1,11 @@
 package be.vub.spacman.level
 
-package nl.tudelft.jpacman.level
-
 import java.util
-import java.util.Map.Entry
 import java.util.concurrent.Executors
 import java.util.concurrent.ScheduledExecutorService
 import java.util.concurrent.TimeUnit
 
-import be.vub.spacman.board.Board
-import be.vub.spacman.board.nl.tudelft.jpacman.board.{BoardUnit, Square}
-import be.vub.spacman.level.CollisionMap
-import be.vub.spacman.level.Pellet
-import be.vub.spacman.level.Player
+import be.vub.spacman.board.{Board, BoardUnit, Square}
 import be.vub.spacman.npc.NPC
 import be.vub.spacman.board.Directions.Direction
 
@@ -187,10 +180,9 @@ import scala.collection.mutable
     * Starts all NPC movement scheduling.
     */
   private def startNPCs(): Unit = {
-    import scala.collection.JavaConversions._
     for (npc <- npcs.keySet) {
       val service = Executors.newSingleThreadScheduledExecutor
-      service.schedule(new Level#NpcMoveTask(service, npc), npc.getInterval / 2, TimeUnit.MILLISECONDS)
+      service.schedule(new NpcMoveTask(service, npc), npc.getInterval / 2, TimeUnit.MILLISECONDS)
       npcs.put(npc, service)
     }
   }

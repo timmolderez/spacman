@@ -1,8 +1,6 @@
 package be.vub.spacman.sprite
 
-import be.vub.spacman.sprite.Sprite
 import java.awt.Graphics
-import java.awt.GraphicsConfiguration
 import java.awt.GraphicsEnvironment
 import java.awt.Image
 import java.awt.Transparency

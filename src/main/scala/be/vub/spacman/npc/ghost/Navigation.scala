@@ -1,11 +1,8 @@
 package be.vub.spacman.npc.ghost
 
-package nl.tudelft.jpacman.npc.ghost
-
 import java.util
 
-import be.vub.spacman.board.Directions
-import be.vub.spacman.board.nl.tudelft.jpacman.board.{BoardUnit, Square}
+import be.vub.spacman.board.{BoardUnit, Directions, Square}
 import be.vub.spacman.board.Directions.Direction
 
 /**

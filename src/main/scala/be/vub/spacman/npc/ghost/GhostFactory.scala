@@ -1,8 +1,6 @@
 package be.vub.spacman.npc.ghost
 
-import be.vub.spacman.npc.ghost.nl.tudelft.jpacman.npc.ghost.{Clyde, Inky, Pinky}
 import be.vub.spacman.sprite.PacManSprites
-import be.vub.spacman.sprite.nl.tudelft.jpacman.sprite.SpriteStore
 
 /**
   * Factory that creates ghosts.

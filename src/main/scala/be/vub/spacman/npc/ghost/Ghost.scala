@@ -1,7 +1,5 @@
 package be.vub.spacman.npc.ghost
 
-package nl.tudelft.jpacman.npc.ghost
-
 import java.util
 import java.util.Random
 
@@ -20,7 +18,7 @@ abstract class Ghost protected(
                                 val moveInterval: Int, /** The base move interval of the ghost. */
                                 val intervalVariation: Int) /** The random variation added to the {@link #moveInterval}. */
   extends NPC {
-  def getSprite: Option[Sprite] = sprites.get(getDirection)
+  def getSprite: Sprite = sprites.get(getDirection).get
 
   def getInterval: Long = this.moveInterval + new Random().nextInt(this.intervalVariation)
 

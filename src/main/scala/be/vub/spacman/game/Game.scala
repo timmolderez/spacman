@@ -1,12 +1,10 @@
 package be.vub.spacman.game
 
-package nl.tudelft.jpacman.game
-
 import java.util
 
 import be.vub.spacman.board.Directions.Direction
 import be.vub.spacman.level.Player
-import be.vub.spacman.level.nl.tudelft.jpacman.level.Level
+import be.vub.spacman.level.Level
 
 /**
   * A basic implementation of a Pac-Man game.

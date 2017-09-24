@@ -1,16 +1,15 @@
 package be.vub.spacman.level
 
-import be.vub.spacman.sprite.Sprite
+import be.vub.spacman.board.BoardUnit
+import be.vub.spacman.sprite.{AnimatedSprite, Sprite}
 import be.vub.spacman.board.Directions.Direction
-import be.vub.spacman.board.nl.tudelft.jpacman.board.BoardUnit
-import be.vub.spacman.sprite.nl.tudelft.jpacman.sprite.AnimatedSprite
 
 /**
   * A player operated unit in our game.
   *
   * @author Jeroen Roosen
   */
-class Player protected(/** The animations for every direction. */
+class Player (/** The animations for every direction. */
                        val sprites: Map[Direction, Sprite],
 
                        /** The animation that is to be played when Pac-Man dies. */

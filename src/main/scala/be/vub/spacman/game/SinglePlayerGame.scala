@@ -1,11 +1,9 @@
 package be.vub.spacman.game
 
-package nl.tudelft.jpacman.game
-
 import java.util
 
 import be.vub.spacman.level.Player
-import be.vub.spacman.level.nl.tudelft.jpacman.level.Level
+import be.vub.spacman.level.Level
 import com.google.common.collect.ImmutableList
 
 /**
@@ -13,7 +11,7 @@ import com.google.common.collect.ImmutableList
   *
   * @author Jeroen Roosen
   */
-class SinglePlayerGame protected(val player: Player, val level: Level) extends Game {
+class SinglePlayerGame (val player: Player, val level: Level) extends Game {
   assert(player != null)
   assert(level != null)
   level.registerPlayer(player)

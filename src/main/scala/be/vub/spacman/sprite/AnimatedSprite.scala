@@ -1,9 +1,5 @@
 package be.vub.spacman.sprite
 
-package nl.tudelft.jpacman.sprite
-
-import be.vub.spacman.sprite.EmptySprite
-import be.vub.spacman.sprite.Sprite
 import java.awt.Graphics
 
 

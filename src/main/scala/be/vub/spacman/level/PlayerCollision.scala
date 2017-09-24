@@ -1,7 +1,7 @@
 package be.vub.spacman.level
 
-import be.vub.spacman.board.nl.tudelft.jpacman.board.BoardUnit
-import be.vub.spacman.npc.ghost.nl.tudelft.jpacman.npc.ghost.Ghost
+import be.vub.spacman.board.BoardUnit
+import be.vub.spacman.npc.ghost.Ghost
 
 /**
   * A simple implementation of a collision map for the JPacman player.

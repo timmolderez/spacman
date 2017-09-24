@@ -1,7 +1,6 @@
 package be.vub.spacman.npc
 
-import be.vub.spacman.board.Directions
-import be.vub.spacman.board.nl.tudelft.jpacman.board.BoardUnit
+import be.vub.spacman.board.{BoardUnit, Directions}
 
 /**
   * A non-player unit.

@@ -1,14 +1,12 @@
 package be.vub.spacman.ui
-package nl.tudelft.jpacman.ui
 
 import java.awt.Color
 import java.awt.Dimension
 import java.awt.Graphics
 import javax.swing.JPanel
 
-import be.vub.spacman.board.Board
-import be.vub.spacman.board.nl.tudelft.jpacman.board.Square
-import be.vub.spacman.game.nl.tudelft.jpacman.game.Game
+import be.vub.spacman.board.{Board, Square}
+import be.vub.spacman.game.Game
 
 /**
   * Panel displaying a game.

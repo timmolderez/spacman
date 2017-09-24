@@ -6,7 +6,6 @@ import java.util
 import be.vub.spacman.PacmanConfigurationException
 import be.vub.spacman.board.Directions
 import be.vub.spacman.npc.ghost.GhostColor.GhostColor
-import be.vub.spacman.sprite.nl.tudelft.jpacman.sprite.{AnimatedSprite, SpriteStore}
 
 import scala.collection.AbstractMap
 

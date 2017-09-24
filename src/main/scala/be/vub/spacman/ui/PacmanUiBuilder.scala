@@ -1,10 +1,11 @@
-package nl.tudelft.jpacman.ui
+package be.vub.spacman.ui
 
 import java.util
 
-import be.vub.spacman.game.nl.tudelft.jpacman.game.Game
-import be.vub.spacman.ui.nl.tudelft.jpacman.ui.ScorePanel.ScoreFormatter
-import be.vub.spacman.ui.nl.tudelft.jpacman.ui.{Action, ScorePanel}
+import be.vub.spacman.game.Game
+import be.vub.spacman.ui.ScorePanel.ScoreFormatter
+
+import scala.collection.mutable
 
 /**
   * Builder for the JPac-Man UI.
@@ -27,11 +28,11 @@ class PacmanUiBuilder() {
   /**
     * Map of buttons and their actions.
     */
-  final private var buttons = new util.LinkedHashMap[String, Action]
+  final private var buttons = new mutable.HashMap[String, Action]
   /**
     * Map of key events and their actions.
     */
-  final private var keyMappings = new util.HashMap[Int, Action]
+  final private var keyMappings = new mutable.HashMap[Int, Action]
   /**
     * <code>true</code> iff this UI has the default buttons.
     */
@@ -54,7 +55,7 @@ class PacmanUiBuilder() {
       addStartButton(game)
       addStopButton(game)
     }
-    new PacmanUI(game, buttons, keyMappings, scoreFormatter)
+    new PacmanUI(game, buttons.toMap, keyMappings.toMap, scoreFormatter)
   }
 
   /**
@@ -66,7 +67,7 @@ class PacmanUiBuilder() {
     */
   private def addStopButton(game: Game): Unit = {
     assert(game != null)
-    buttons.put(PacmanUiBuilder.STOP_CAPTION, new Nothing() {
+    buttons.put(PacmanUiBuilder.STOP_CAPTION, new Action() {
       def doAction(): Unit = {
         game.stop
       }
@@ -82,7 +83,7 @@ class PacmanUiBuilder() {
     */
   private def addStartButton(game: Game): Unit = {
     assert(game != null)
-    buttons.put(PacmanUiBuilder.START_CAPTION, new Nothing() {
+    buttons.put(PacmanUiBuilder.START_CAPTION, new Action() {
       def doAction(): Unit = {
         game.start
       }
@@ -98,7 +99,7 @@ class PacmanUiBuilder() {
     * The action to perform when the key is pressed.
     * @return The builder.
     */
-  def addKey(keyCode: Integer, action: Nothing): PacManUiBuilder = {
+  def addKey(keyCode: Integer, action: Action): PacmanUiBuilder = {
     assert(keyCode != null)
     assert(action != null)
     keyMappings.put(keyCode, action)
@@ -114,7 +115,7 @@ class PacmanUiBuilder() {
     * The action to execute when the button is clicked.
     * @return The builder.
     */
-  def addButton(caption: String, action: Nothing): PacManUiBuilder = {
+  def addButton(caption: String, action: Action): PacmanUiBuilder = {
     assert(caption != null)
     assert(!caption.isEmpty)
     assert(action != null)

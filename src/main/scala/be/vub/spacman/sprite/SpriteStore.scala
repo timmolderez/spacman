@@ -1,7 +1,5 @@
 package be.vub.spacman.sprite
 
-package nl.tudelft.jpacman.sprite
-
 import java.awt.image.BufferedImage
 import java.io.IOException
 import java.io.InputStream
@@ -53,7 +51,7 @@ class SpriteStore() {
     * When the resource could not be loaded.
     */
   @throws[IOException]
-  private def loadSpriteFromResource(resource: String) = try {
+  private def loadSpriteFromResource(resource: String) = {
     val input = classOf[SpriteStore].getResourceAsStream(resource)
     try {
       if (input == null) throw new IOException("Unable to load " + resource + ", resource does not exist.")

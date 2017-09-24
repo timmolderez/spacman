@@ -1,6 +1,6 @@
 package be.vub.spacman.level
 
-import be.vub.spacman.board.nl.tudelft.jpacman.board.BoardUnit
+import be.vub.spacman.board.BoardUnit
 
 /**
   * A table containing all (relevant) collisions between different types of

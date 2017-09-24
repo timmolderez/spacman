@@ -1,11 +1,7 @@
 package be.vub.spacman.game
 
-package nl.tudelft.jpacman.game
-
-import be.vub.spacman.game.nl.tudelft.jpacman.game.Game
-import be.vub.spacman.game.nl.tudelft.jpacman.game.SinglePlayerGame
 import be.vub.spacman.level.PlayerFactory
-import be.vub.spacman.level.nl.tudelft.jpacman.level.Level
+import be.vub.spacman.level.Level
 
 
 /**
@@ -13,14 +9,7 @@ import be.vub.spacman.level.nl.tudelft.jpacman.level.Level
   *
   * @author Jeroen Roosen
   */
-class GameFactory(val playerFact: PlayerFactory)
-
-/**
-  * Creates a new game factory.
-  *
-  * @param playerFactory
-  * The factory providing the player objects.
-  */ {
+class GameFactory(val playerFact: PlayerFactory) {
   /**
     * Creates a game for a single level with one player.
     *

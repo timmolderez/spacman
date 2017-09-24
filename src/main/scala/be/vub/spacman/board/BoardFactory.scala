@@ -1,9 +1,6 @@
 package be.vub.spacman.board
 
-package nl.tudelft.jpacman.board
-
-import be.vub.spacman.board.Board
-import be.vub.spacman.board.nl.tudelft.jpacman.board.Square
+import be.vub.spacman.board.BoardFactory.{Ground, Wall}
 import be.vub.spacman.sprite.{PacManSprites, Sprite}
 
 /**
@@ -19,7 +16,7 @@ object BoardFactory {
     *
     * @author Jeroen Roosen
     */
-  final private class Wall private[board](val background: Sprite) extends Square {
+  final protected class Wall private[board](val background: Sprite) extends Square {
     def isAccessibleTo(unit: BoardUnit) = false
 
     override def getSprite: Sprite = background
@@ -30,7 +27,7 @@ object BoardFactory {
     *
     * @author Jeroen Roosen
     */
-  final private class Ground private[board](val background: Sprite) extends Square {
+  final protected class Ground private[board](val background: Sprite) extends Square {
     def isAccessibleTo(unit: BoardUnit) = true
 
     override def getSprite: Sprite = background
@@ -85,12 +82,12 @@ class BoardFactory(val sprites: PacManSprites) {
     *
     * @return A new square that can be occupied by any unit.
     */
-  def createGround = new BoardFactory.Ground(sprites.getGroundSprite)
+  def createGround = new Ground(sprites.getGroundSprite)
 
   /**
     * Creates a new square that cannot be occupied by any unit.
     *
     * @return A new square that cannot be occupied by any unit.
     */
-  def createWall = new BoardFactory.Wall(sprites.getWallSprite)
+  def createWall = new Wall(sprites.getWallSprite)
 }

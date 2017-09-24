@@ -1,10 +1,8 @@
 package be.vub.spacman.ui
-package nl.tudelft.jpacman.ui
 
 import java.awt.event.KeyEvent
 import java.awt.event.KeyListener
 import java.util
-
 
 /**
   * A key listener based on a set of keyCode-action pairs.
@@ -14,7 +12,7 @@ import java.util
 class PacKeyListener private[ui](/**
                                    * The mappings of keyCode to action.
                                    */
-                                 val mappings: Map[Integer, Action]) extends KeyListener {
+                                 val mappings: Map[Int, Action]) extends KeyListener {
   assert(mappings != null)
 
   override def keyPressed(e: KeyEvent): Unit = {

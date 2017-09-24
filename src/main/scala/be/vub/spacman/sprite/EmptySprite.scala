@@ -1,6 +1,5 @@
 package be.vub.spacman.sprite
 
-import be.vub.spacman.sprite.Sprite
 import java.awt.Graphics
 
 

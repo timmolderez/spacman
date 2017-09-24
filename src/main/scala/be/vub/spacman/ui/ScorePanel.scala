@@ -1,7 +1,5 @@
 package be.vub.spacman.ui
 
-package nl.tudelft.jpacman.ui
-
 import java.awt.GridLayout
 import java.util
 import javax.swing.{JLabel, JPanel, SwingConstants}
@@ -22,7 +20,7 @@ object ScorePanel {
     * The default way in which the score is shown.
     */
   val DEFAULT_SCORE_FORMATTER = new ScorePanel.ScoreFormatter() {
-    override def format(p: Player): String = String.format("Score: %3d", p.getScore)
+    override def format(p: Player): String = String.format("Score: %3d", p.getScore.toString)
   }
 
   /**

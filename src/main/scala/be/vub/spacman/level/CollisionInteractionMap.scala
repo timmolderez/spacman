@@ -1,6 +1,6 @@
 package be.vub.spacman.level
 
-import be.vub.spacman.board.nl.tudelft.jpacman.board.BoardUnit
+import be.vub.spacman.board.BoardUnit
 
 import scala.collection.immutable.HashMap
 import scala.collection.mutable

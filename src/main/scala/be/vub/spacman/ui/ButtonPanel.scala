@@ -1,7 +1,5 @@
 package be.vub.spacman.ui
 
-package nl.tudelft.jpacman.ui
-
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 import java.util
@@ -15,9 +13,9 @@ import javax.swing.JPanel
   * @author Jeroen Roosen
   */
 @SerialVersionUID(1L)
-class ButtonPanel private[ui](val buttons: Map[String, Action], val parent: JFrame) extends JPanel {
+class ButtonPanel private[ui](val buttons: Map[String, Action], val parentFrame: JFrame) extends JPanel {
   assert(buttons != null)
-  assert(parent != null)
+  assert(parentFrame != null)
 
   import scala.collection.JavaConversions._
 
@@ -26,7 +24,7 @@ class ButtonPanel private[ui](val buttons: Map[String, Action], val parent: JFra
     button.addActionListener(new ActionListener() {
       override def actionPerformed(e: ActionEvent): Unit = {
         buttons.get(caption).get.doAction()
-        parent.requestFocusInWindow
+        parentFrame.requestFocusInWindow
       }
     })
     add(button)
