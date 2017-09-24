@@ -279,14 +279,10 @@ import scala.collection.mutable
     *
     * @author Jeroen Roosen
     */
-  final private class NpcMoveTask private[level](/**
-                                                   * The service executing the task.
-                                                   */
+  final private class NpcMoveTask private[level](/** The service executing the task. */
                                                  val service: ScheduledExecutorService,
 
-                                                 /**
-                                                   * The NPC to move.
-                                                   */
+                                                 /** The NPC to move. */
                                                  val npc: NPC)
     extends Runnable {
 

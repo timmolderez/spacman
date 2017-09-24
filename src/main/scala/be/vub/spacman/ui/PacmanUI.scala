@@ -35,6 +35,11 @@ object PacmanUI {
 
 @SerialVersionUID(1L)
 class PacmanUI(val game: Game, val buttons: Map[String, Action], val keyMappings: Map[Int, Action], val sf: ScoreFormatter) extends JFrame("JPac-Man") {
+  /** The panel displaying the player scores. */
+  final private var scorePanel = null : ScorePanel
+  /** The panel displaying the game. */
+  final private var boardPanel = null : BoardPanel
+
   assert(game != null)
   assert(buttons != null)
   assert(keyMappings != null)
@@ -52,10 +57,7 @@ class PacmanUI(val game: Game, val buttons: Map[String, Action], val keyMappings
   contentPanel.add(boardPanel, BorderLayout.CENTER)
   pack()
 
-  /** The panel displaying the player scores. */
-  final private var scorePanel = null : ScorePanel
-  /** The panel displaying the game. */
-  final private var boardPanel = null : BoardPanel
+
 
   /**
     * Starts the "engine", the thread that redraws the interface at set
@@ -66,7 +68,10 @@ class PacmanUI(val game: Game, val buttons: Map[String, Action], val keyMappings
     val service = Executors.newSingleThreadScheduledExecutor
     service.scheduleAtFixedRate(new Runnable() {
       override def run(): Unit = {
-        nextFrame()
+        try {nextFrame()}
+        catch {
+          case e: Exception => e.printStackTrace()
+        }
       }
     }, 0, PacmanUI.FRAME_INTERVAL, TimeUnit.MILLISECONDS)
   }

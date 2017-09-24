@@ -20,7 +20,7 @@ object ScorePanel {
     * The default way in which the score is shown.
     */
   val DEFAULT_SCORE_FORMATTER = new ScorePanel.ScoreFormatter() {
-    override def format(p: Player): String = String.format("Score: %3d", p.getScore.toString)
+    override def format(p: Player): String = String.format("Score: %3d", p.getScore : Integer)
   }
 
   /**
