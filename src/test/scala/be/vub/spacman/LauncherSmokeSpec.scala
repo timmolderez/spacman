@@ -2,8 +2,6 @@ package be.vub.spacman
 
 import be.vub.spacman.board.Directions
 import be.vub.spacman.nl.tudelft.jpacman.LauncherSmokeTest
-import org.junit.Assert.{assertEquals, assertFalse, assertTrue}
-import org.scalatest.{FlatSpec, Matchers}
 
 /**
   * Smoke test launching the full game,
@@ -20,7 +18,7 @@ import org.scalatest.{FlatSpec, Matchers}
   *
   * @author Arie van Deursen, March 2014.
   */
-class LauncherSmokeSpec extends FlatSpec with Matchers {
+class LauncherSmokeSpec extends UnitSpec {
 
   private var launcher = null : Launcher
 

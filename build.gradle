@@ -40,5 +40,6 @@ dependencies {
     compile 'com.google.guava:guava:19.0'
 
     testCompile 'org.scalatest:scalatest_2.11:3.0.0'
+    testCompile 'org.scalamock:scalamock-scalatest-support_2.11:3.6.0'
     testCompile 'junit:junit:4.12'
 }
