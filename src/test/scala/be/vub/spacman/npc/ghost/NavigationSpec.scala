@@ -26,11 +26,6 @@ class NavigationSpec extends UnitSpec with MockFactory{
 
     // Run the test
     try test()
-
-    // Test teardown
-    finally {
-      // TODO
-    }
   }
 
   "Path to square" should "be empty" in {

@@ -7,8 +7,8 @@ package be.vub.spacman.board
   */
 class Board(val board: Array[Array[Square]]) {
 
-  assert(board != null)
-  assert(invariant, "Initial grid cannot contain null squares")
+assert(board != null)
+assert(invariant, "Initial grid cannot contain null squares")
 
   /**
     * Whatever happens, the squares on the board can't be null.
