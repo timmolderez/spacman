@@ -49,10 +49,6 @@ import scala.collection.mutable
                                                            /** The table of possible collisions between units. */
                                                            val collisions: CollisionMap)
  {
-  assert(board != null)
-  assert(ghosts != null)
-  assert(startSquares != null)
-
   /** The lock that ensures moves are executed sequential. */
   final private val moveLock = new Object
   /** The lock that ensures starting and stopping can't interfere with each other. */
@@ -105,8 +101,6 @@ import scala.collection.mutable
     * The player to register.
     */
   def registerPlayer(p: Player): Unit = {
-    assert(p != null)
-    assert(!startSquares.isEmpty)
     if (players.contains(p)) return
     players.add(p)
     val square = startSquares.get(startSquareIndex)
@@ -132,8 +126,6 @@ import scala.collection.mutable
     * The direction to move the unit in.
     */
   def move(unit: BoardUnit, direction: Direction): Unit = {
-    assert(unit != null)
-    assert(direction != null)
     if (!isInProgress) return
 
     moveLock.synchronized {
@@ -270,7 +262,6 @@ import scala.collection.mutable
         x += 1; x - 1
       }
     }
-    assert(pellets >= 0)
     pellets
   }
 

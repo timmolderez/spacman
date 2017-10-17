@@ -7,9 +7,6 @@ package be.vub.spacman.board
   */
 class Board(val board: Array[Array[Square]]) {
 
-assert(board != null)
-assert(invariant, "Initial grid cannot contain null squares")
-
   /**
     * Whatever happens, the squares on the board can't be null.
     *
@@ -48,9 +45,7 @@ assert(invariant, "Initial grid cannot contain null squares")
     * @return The square at the given <code>x,y</code> position (never null).
     */
   def squareAt(x: Int, y: Int): Square = {
-    assert(withinBorders(x, y))
     val result = board(x)(y)
-    assert(result != null, "Follows from invariant.")
     result
   }
 

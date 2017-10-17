@@ -1,7 +1,7 @@
 package be.vub.spacman
 
 import java.awt.event.KeyEvent
-import java.io.IOException
+import java.io.{File, IOException}
 
 import be.vub.spacman.board.{BoardFactory, Directions}
 import be.vub.spacman.level.{Level, LevelFactory, MapParser, PlayerFactory}
@@ -45,6 +45,10 @@ class Launcher {
     */
   def getGame: Game = game
 
+  def f(): Int = {
+    5
+  } ensuring( (x: Int) => true)
+
   /**
     * Creates a new game.
     *
@@ -52,9 +56,16 @@ class Launcher {
     * @return a new Game.
     */
   def makeGame(boardFile: String): Game = {
+    require(boardFile != null)
+    require(resourceExists(boardFile))
+
     val gf = getGameFactory
     val level = makeLevel(boardFile)
     gf.createSinglePlayerGame(level)
+  } ensuring(!_.isInProgress)
+
+  private def resourceExists(file: String): Boolean = {
+    classOf[Launcher].getResourceAsStream("/" + file) != null
   }
 
   /**
@@ -65,15 +76,13 @@ class Launcher {
     */
   def makeLevel(boardFile: String): Level = {
     val parser = getMapParser
+    val boardStream = classOf[Launcher].getResourceAsStream("/" + boardFile)
     try {
-      val boardStream = classOf[Launcher].getResourceAsStream("/" + boardFile)
-      try
-        parser.parseMap(boardStream)
-      catch {
-        case e: IOException =>
-          throw new PacmanConfigurationException("Unable to create level.", e)
-      } finally if (boardStream != null) boardStream.close()
-    }
+      parser.parseMap(boardStream)
+    } catch {
+      case e: IOException =>
+        throw new PacmanConfigurationException("Unable to create level.", e)
+    } finally if (boardStream != null) boardStream.close()
   }
 
   /**
@@ -160,6 +169,7 @@ class Launcher {
     * @param boardFile Text file (in resources directory) specifying the Pacman level
     */
   def launch(boardFile: String): Unit = {
+    require(boardFile != null)
     game = makeGame(boardFile)
     val builder = new PacmanUiBuilder().withDefaultButtons
     addSinglePlayerKeys(builder, game)

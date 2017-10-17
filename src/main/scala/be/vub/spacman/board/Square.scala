@@ -46,7 +46,6 @@ abstract class Square protected() {
     */
   def link(neighbour: Square, direction: Direction): Unit = {
     neighbours.put(direction, neighbour)
-    assert(invariant)
   }
 
   /**
@@ -65,8 +64,6 @@ abstract class Square protected() {
     * The unit to occupy this square.
     */
   private[board] def put(occupant: BoardUnit): Unit = {
-    assert(occupant != null)
-    assert(!occupants.contains(occupant))
     occupants.add(occupant)
   }
 
@@ -77,7 +74,6 @@ abstract class Square protected() {
     * The unit to be removed from this square.
     */
   private[board] def remove(occupant: BoardUnit): Unit = {
-    assert(occupant != null)
     occupants.remove(occupant)
   }
 
