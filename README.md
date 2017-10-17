@@ -11,5 +11,5 @@ Like jpacman, spacman is an implementation of the Pacman game, with a test suite
 - Select the folder where spacman was cloned.
 - Select "Import project from external model" and choose "Gradle".
 - Click "Next", then "Finish", and wait for the import process to finish.
+- It is possible that the Project SDK is not set automatically. To do this, go to File > Project Structure... , and change the "Project SDK:" field to e.g. Java version 1.8.
 - Once the import process is finished, you can try out spacman: in the project explorer, go to spacman/src/main/scala/be/vub/spacman/Launcher. Right-click this file and choose "Run 'Launcher.main()'".
-
