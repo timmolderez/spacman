@@ -1,5 +1,5 @@
 # spacman
-<img align=right src="https://raw.githubusercontent.com/timmolderez/spacman/master/src/main/resources/sprite/pacman_in_space.jpg"  ></img>
+<img align=right src="https://raw.githubusercontent.com/timmolderez/spacman/9c4323766d5beb736cece8154ec666c1a905538b/src/main/resources/sprite/pacman_in_space.jpg"  ></img>
 Spacman is a Scala port of the [jpacman](https://github.com/avandeursen/jpacman-framework-v5) project. 
 Like jpacman, spacman is an implementation of the Pacman game, with a test suite included, intended to be used in Software Engineering courses.
 
