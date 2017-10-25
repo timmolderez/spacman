@@ -1,7 +1,7 @@
 package be.vub.spacman
 
 import be.vub.spacman.board.Directions
-import be.vub.spacman.nl.tudelft.jpacman.LauncherSmokeTest
+import be.vub.spacman.game.Game
 
 /**
   * Smoke test launching the full game,
@@ -52,24 +52,47 @@ class LauncherSmokeSpec extends UnitSpec {
     game.move(player, Directions.WEST)
     player.getScore should be (10)
     // try to move as far as we can
-    LauncherSmokeTest.move(game, Directions.EAST, 7)
+    move(game, Directions.EAST, 7)
     player.getScore should be (60)
     // move towards the monsters
-    LauncherSmokeTest.move(game, Directions.NORTH, 6)
+    move(game, Directions.NORTH, 6)
     player.getScore should be (120)
     // no more points to earn here.
-    LauncherSmokeTest.move(game, Directions.WEST, 2)
+    move(game, Directions.WEST, 2)
     player.getScore should be (120)
-    LauncherSmokeTest.move(game, Directions.NORTH, 2)
+    move(game, Directions.NORTH, 2)
     // Sleeping in tests is generally a bad idea.
     // Here we do it just to let the monsters move.
     Thread.sleep(3000L)
     // we're close to monsters, this will get us killed.
-    LauncherSmokeTest.move(game, Directions.WEST, 10)
-    LauncherSmokeTest.move(game, Directions.EAST, 10)
+    move(game, Directions.WEST, 10)
+    move(game, Directions.EAST, 10)
     player.isAlive should be (false)
     game.stop
     game.isInProgress should be (false)
+  }
+
+
+
+  /**
+    * Make number of moves in given direction.
+    *
+    * @param game The game we're playing
+    * @param dir The direction to be taken
+    * @param numSteps The number of steps to take
+    */
+  def move(game: Game, dir: Directions.Direction, numSteps: Int): Unit = {
+    val player = game.getPlayers.get(0)
+    var i = 0
+    while ( {
+      i < numSteps
+    }) {
+      game.move(player, dir)
+
+      {
+        i += 1; i - 1
+      }
+    }
   }
 
 }
