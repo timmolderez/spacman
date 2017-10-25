@@ -157,14 +157,14 @@ class Launcher {
   }
 
   /**
-    * Creates and starts a JPac-Man game.
+    * Creates and starts a spacman game.
     */
   def launch(): Unit = {
     launch("board.txt")
   }
 
   /**
-    * Creates and starts a JPac-Man game.
+    * Creates and starts a spacman game.
     *
     * @param boardFile Text file (in resources directory) specifying the Pacman level
     */

@@ -8,7 +8,7 @@ import be.vub.spacman.ui.ScorePanel.ScoreFormatter
 import scala.collection.mutable
 
 /**
-  * Builder for the JPac-Man UI.
+  * Builder for the spacman UI.
   *
   * @author Jeroen Roosen
   */

@@ -34,7 +34,7 @@ object PacmanUI {
 }
 
 @SerialVersionUID(1L)
-class PacmanUI(val game: Game, val buttons: Map[String, Action], val keyMappings: Map[Int, Action], val sf: ScoreFormatter) extends JFrame("JPac-Man") {
+class PacmanUI(val game: Game, val buttons: Map[String, Action], val keyMappings: Map[Int, Action], val sf: ScoreFormatter) extends JFrame("spacman") {
   /** The panel displaying the player scores. */
   final private var scorePanel = null : ScorePanel
   /** The panel displaying the game. */
