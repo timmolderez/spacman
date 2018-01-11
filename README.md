@@ -1,7 +1,9 @@
 # spacman
 <img align=right src="https://raw.githubusercontent.com/timmolderez/spacman/2d082e9e18531adf68ac424ae7d7e596e186cd14/src/main/resources/sprite/pacman_in_space.jpg"  ></img>
 Spacman is a Scala port of the [jpacman](https://github.com/SERG-Delft/jpacman-framework) project. 
-Like jpacman, spacman is an implementation of the Pacman game, with a test suite included, intended to be used in Software Engineering courses.
+Like jpacman, spacman is an implementation of the Pacman game, with a test suite included, intended for use in Software Engineering courses.
+
+It is currently used at the Vrije Universiteit Brussel to give students an introduction to unit testing, functional testing, mocking and design by contract. The test suite of spacman is written using the [ScalaTest](http://www.scalatest.org/) and [ScalaMock](http://scalamock.org) frameworks.
 
 ## Importing spacman in IntelliJ IDEA:
 
