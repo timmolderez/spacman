@@ -8,20 +8,6 @@ package be.vub.spacman.board
 class Board(val board: Array[Array[Square]]) {
 
   /**
-    * Whatever happens, the squares on the board can't be null.
-    *
-    * @return false if any square on the board is null.
-    */
-  final protected def invariant: Boolean = {
-    for (row <- board) {
-      for (square <- row) {
-        if (square == null) return false
-      }
-    }
-    true
-  }
-
-  /**
     * Returns the number of columns.
     *
     * @return The width of this board.
@@ -59,4 +45,18 @@ class Board(val board: Array[Array[Square]]) {
     * @return <code>true</code> iff the position is on this board.
     */
   def withinBorders(x: Int, y: Int): Boolean = x >= 0 && x < getWidth && y >= 0 && y < getHeight
+
+  /**
+    * Whatever happens, the squares on the board can't be null.
+    *
+    * @return false if any square on the board is null.
+    */
+  final protected def invariant: Boolean = {
+    for (row <- board) {
+      for (square <- row) {
+        if (square == null) return false
+      }
+    }
+    true
+  }
 }

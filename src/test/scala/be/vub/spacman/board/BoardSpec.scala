@@ -1,8 +1,6 @@
 package be.vub.spacman.board
 
 import be.vub.spacman.UnitSpec
-import be.vub.spacman.level.Level
-import com.google.common.collect.Lists
 import org.scalamock.scalatest.MockFactory
 
 /**
@@ -61,4 +59,21 @@ class BoardSpec extends UnitSpec with MockFactory {
   "Square in 1st column, 2nd row" should "be x0y1" in {
     board.squareAt(0,1) should be (x0y1)
   }
+
+  "Invalid square coordinates" should "throw an exception" in {
+    a [ArrayIndexOutOfBoundsException] should be thrownBy{board.squareAt(-1, -1)}
+  }
+
+  "Square in 2nd column, 3rd row" should "be within the board's borders" in {
+    board.withinBorders(1,2) should be (true)
+  }
+
+  "Invalid square" should "be outside the board's borders" in {
+    board.withinBorders(-1, -1) should be (false)
+  }
+
+  "Square in 3rd column, 3rd row" should "be outside the board's borders" in {
+    board.withinBorders(2,2) should be (false)
+  }
+
 }
