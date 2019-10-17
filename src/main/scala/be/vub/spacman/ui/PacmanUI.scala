@@ -43,7 +43,7 @@ class PacmanUI(val game: Game, val buttons: Map[String, Action], val keyMappings
   assert(game != null)
   assert(buttons != null)
   assert(keyMappings != null)
-  setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)
+//  setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)
   val keys = new PacKeyListener(keyMappings)
   addKeyListener(keys)
   val buttonPanel = new ButtonPanel(buttons, this)
